@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Grid</title>
+    <style>
+        *{
+        padding: 0;
+        margin: 0;
+        box-sizing:border-box;
+        }
+    
+    
+        .container{
+        display:grid;
+        grid-template-areas:
+        "header"
+        "nav"
+        "article1"
+        "article2"
+        "article3";
+        grid-template-rows: 18% 10% 1fr 1fr 1fr;
+        }
+    
+        .header{
+        grid-area: header;
+        background-color: #92EC92;
+        }
+    
+        .nav{
+        grid-area: nav;
+        background-color: #333333;
+        }
+
+        article{
+        border: 1px solid green;
+        padding: 20px;
+        }
+    
+        .article1{
+        grid-area: article1;
+      
+        }
+    
+        .article2{
+        grid-area: article2;
+     
+        }
+    
+        .article3{
+        grid-area: article3;
+        }
+
+        h1{
+            text-align: center;
+            margin: 35px 0;
+        }
+
+        h2{
+            font-size: 25px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        nav ul{
+            display: flex;
+            list-style: none;
+            gap: 13px;
+        }
+
+        nav ul li{
+            margin: 20px 20px;
+        }
+       
+        ul li a {
+              color: white;
+              text-decoration: none;
+              font-weight: 600;
+          }
+
+          .footer{
+              background-color: black;
+              grid-area: footer;
+          }
+        /* smartphone */
+        @media screen and (min-width:350px) {
+           
+            .container{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 12% 22% 40%;
+            grid-template-areas:
+            
+            "header header header"
+            "nav nav nav"
+            "article1 article2 article2"
+            "article3 article3 article3"
+            "footer footer footer";
+            }
+
+            nav ul{
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+                
+            }
+
+        }
+        
+
+
+        /* tablet*/
+        @media screen and (min-width:768px){
+            
+            .container{
+            display: grid;
+            grid-template-columns: 13% 1fr 1fr;
+            grid-template-rows: 30% 40% 40%;
+            grid-template-areas:
+            "nav header header"
+            "nav article1 article2"
+            "nav article3 article3"
+            "footer footer footer";
+            }
+
+            nav ul{
+                display: flex;
+                flex-direction: column;
+            }
+
+
+        }
+
+        /*laptop */
+        @media screen and (min-width:1224px) {
+           .container{
+            display: grid;
+            grid-template-columns: 33.3% 33.3% 33.3%;
+            grid-template-rows: 38% 20% 80%;
+            grid-template-areas:
+            "header header header"
+            "nav nav nav"
+            "article1 article2 article3"
+            "footer footer footer";
+            }
+
+            nav ul{
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: row;
+            }
+
+            h1{
+                margin: 40px 0;
+            }
+
+        }
+    </style>
+</head>
+<body>
+     <div class="container">
+        <header class="header">
+            <h1>Online Magazine</h1>
+        </header>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <article class="article1">
+            <h2>Lifestyle</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum odit totam esse accusantium officiis perspiciatis tempore suscipit, voluptate aperiam. Id.</p>
+        </article>
+        <article class="article2">
+            <h2>Business</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa nobis natus rerum! Officia, sequi? Blanditiis quisquam autem enim molestias fugiat quidem </p>   
+        </article>
+        <article class="article3">
+            <h2>Sports</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia sunt architecto, dignissimos, sequi consequuntur, ullam reprehenderit provident maxime</p>     
+        </article>
+        <footer class="footer">
+            footer
+        </footer>
+    </div>
+</body>
+</html>
